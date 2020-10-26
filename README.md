@@ -18,7 +18,7 @@ Use `yarn start` or `npm start` to run dev server, and `yarn test` or `npm test`
 
 ## Ticketing managing application
 
-Build a ticket managing app, where the user can add, filter, assign, and complete tickets.
+Build a ticket managing app, where the user can *add*, *filter* (by status), *assign*, and *complete* tickets.
 
 - The app should have two screens:
 
@@ -27,7 +27,9 @@ Build a ticket managing app, where the user can add, filter, assign, and complet
   
     Please use the React Router to manage the transitions between them.
 
-- You can use any state management library you want (or none at all). e.g. Redux, MobX, or just React context + providers.
+- RxJS is used for the backend service. Knowledge of RxJS is a bonus, but we understand that not all React developers are familiar with it, so you are free to convert observables to promises if you choose to.
+
+- You can use any state management library you want (or none at all). e.g. Redux, MobX, or just React context + `useState`/`useReducer`.
 
 - Write a couple of tests. The goal here is not to build a production-quality app, so don't test every single detail. Two or three tests should be good enough.
 
