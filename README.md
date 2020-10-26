@@ -8,7 +8,7 @@ The most important part of the interview will come after this one, when we look 
 
 ## Stackblitz vs local development
 
-You can work on the application directly in Stackblitz, or you can download the code and work on it locally in your own IDE.
+You can work on the application directly in Stackblitz, but we find it easier to work with it locally. You can download the source code using the `Download Project` button (the cloud download icon) in the top-left area of this the Stackblitz UI.
 
 ### Local development
 
@@ -20,9 +20,17 @@ Use `yarn start` or `npm start` to run dev server, and `yarn test` or `npm test`
 
 Build a ticket managing app, where the user can add, filter, assign, and complete tickets.
 
-- The app should have two screens: the list screen and the details screen. Please use the React Router to manage the transitions between them.
+- The app should have two screens:
+
+    1. the list screen and
+    2. the details screen.
+  
+    Please use the React Router to manage the transitions between them.
+
 - You can use any state management library you want (or none at all). e.g. Redux, MobX, or just React context + providers.
+
 - Write a couple of tests. The goal here is not to build a production-quality app, so don't test every single detail. Two or three tests should be good enough.
+
 - Don't forget about error handling and race conditions. The API server has a random delay. If you bump it up to say 10 seconds, would the app still work correctly?
 
 ## Submitting your solution
