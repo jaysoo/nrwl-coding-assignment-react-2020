@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import './app.module.css';
+import "./app.css";
 import { BackendService, Ticket } from "./backend";
 
 interface AppProps {
@@ -9,13 +9,13 @@ interface AppProps {
 const App = ({ backend }: AppProps) => {
   const [tickets, setTickets] = useState([] as Ticket[]);
 
-  // The backend returns observables, but you can convert to promises if 
+  // The backend returns observables, but you can convert to promises if
   // that is easier to work with.
   useEffect(() => {
     const fetchData = async () => {
       const result = await backend.tickets().toPromise();
-      setTickets(result)
-    }
+      setTickets(result);
+    };
     fetchData();
   }, [backend]);
 
