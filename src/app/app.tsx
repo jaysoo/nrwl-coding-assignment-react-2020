@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./app.css";
-import { BackendService, Ticket } from "./backend";
+import { BackendService, Ticket } from "../backend";
 
 interface AppProps {
   backend: BackendService;
