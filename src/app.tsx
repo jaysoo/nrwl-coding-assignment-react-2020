@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import styles from './app.module.css';
+import './app.module.css';
 import { BackendService, Ticket } from "./backend";
 
 interface AppProps {
@@ -20,7 +20,7 @@ const App = ({ backend }: AppProps) => {
   }, [backend]);
 
   return (
-    <div className={styles.app}>
+    <div className="app">
       <h2>Tickets</h2>
       {tickets ? (
         <ul>
