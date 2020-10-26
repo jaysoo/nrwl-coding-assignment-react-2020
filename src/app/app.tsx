@@ -10,13 +10,19 @@ const App = ({ backend }: AppProps) => {
   const [tickets, setTickets] = useState([] as Ticket[]);
 
   // The backend returns observables, but you can convert to promises if
-  // that is easier to work with.
+  // that is easier to work with. It's up to you.
   useEffect(() => {
     const fetchData = async () => {
       const result = await backend.tickets().toPromise();
       setTickets(result);
     };
     fetchData();
+
+    // Example of use observables directly
+    // const sub = backend.tickets().subscribe(result => {
+    //   setTickets(result);
+    // });
+    // return () => sub.unsubscribe(); // clean up subscription
   }, [backend]);
 
   return (
