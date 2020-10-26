@@ -1,5 +1,5 @@
-import { Observable, of, throwError } from 'rxjs';
-import { delay, tap } from 'rxjs/operators';
+import { Observable, of, throwError } from "rxjs";
+import { delay, tap } from "rxjs/operators";
 
 /**
  * This service acts as a mock back-end.
@@ -26,28 +26,29 @@ export class BackendService {
   storedTickets: Ticket[] = [
     {
       id: 0,
-      description: 'Install a monitor arm',
+      description: "Install a monitor arm",
       assigneeId: 111,
       completed: false
     },
     {
       id: 1,
-      description: 'Move the desk to the new location',
+      description: "Move the desk to the new location",
       assigneeId: 111,
       completed: false
     }
   ];
 
-  storedUsers: User[] = [{ id: 111, name: 'Victor' }];
+  storedUsers: User[] = [{ id: 111, name: "Victor" }];
 
   lastId = 1;
 
   private findTicketById = (id: number) => {
     const found = this.storedTickets.find(ticket => ticket.id === +id);
-    if (found) return found
-    throw new Error(`Ticket (id=${id}) not found`)
-  }
-  private findUserById = (id: number) => this.storedUsers.find(user => user.id === +id);
+    if (found) return found;
+    throw new Error(`Ticket (id=${id}) not found`);
+  };
+  private findUserById = (id: number) =>
+    this.storedUsers.find(user => user.id === +id);
 
   tickets() {
     return of(this.storedTickets).pipe(delay(randomDelay()));
@@ -92,7 +93,7 @@ export class BackendService {
       );
     }
 
-    return throwError(new Error('ticket or user not found'));
+    return throwError(new Error("ticket or user not found"));
   }
 
   complete(ticketId: number, completed: boolean) {
@@ -106,6 +107,6 @@ export class BackendService {
       );
     }
 
-    return throwError(new Error('ticket not found'));
+    return throwError(new Error("ticket not found"));
   }
 }
