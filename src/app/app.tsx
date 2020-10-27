@@ -31,7 +31,7 @@ const App = ({ backend }: AppProps) => {
       {tickets ? (
         <ul>
           {tickets.map(t => (
-            <li>
+            <li key={t.id}>
               Ticket: {t.id}, {t.description}
             </li>
           ))}
